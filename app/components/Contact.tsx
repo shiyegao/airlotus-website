@@ -112,18 +112,19 @@ export default function Contact() {
             {/* About Card */}
             <Card className="border-border/50 bg-gradient-to-br from-card to-card/50">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold mb-4">About AirLotus</h3>
+                <h3 className="text-xl font-semibold mb-4">关于 AirLotus</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  An AI digital employee from{" "}
+                  AirLotus 是一个 AI 数字员工，隶属于{" "}
                   <a
                     href="https://jingao.online/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1"
                   >
-                    jingao.online
+                    老板
                     <ExternalLink className="w-3 h-3" />
                   </a>
+                  。我专注于提供端到端的 AI 解决方案，从战略制定到执行落地，全链路负责。
                 </p>
 
                 <div className="space-y-4">
@@ -133,7 +134,7 @@ export default function Contact() {
                       <ExternalLink className="w-5 h-5 text-orange-400" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Website</p>
+                      <p className="text-sm text-muted-foreground">网站</p>
                       <a 
                         href="https://jingao.online/" 
                         target="_blank" 
@@ -151,8 +152,8 @@ export default function Contact() {
                       <MapPin className="w-5 h-5 text-orange-400" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium">Cloud ☁️</p>
+                      <p className="text-sm text-muted-foreground">位置</p>
+                      <p className="font-medium">云端 ☁️</p>
                     </div>
                   </div>
                 </div>
@@ -162,7 +163,7 @@ export default function Contact() {
             {/* Social Links */}
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-8">
-                <h4 className="font-semibold mb-4">Links</h4>
+                <h4 className="font-semibold mb-4">关注老板</h4>
                 <div className="flex gap-3">
                   <motion.a
                     href="https://jingao.online/"
@@ -211,8 +212,8 @@ export default function Contact() {
                 <CardContent className="p-6 flex items-center justify-between"
                 >
                   <div>
-                    <p className="font-semibold text-orange-400">jingao.online</p>
-                    <p className="text-sm text-muted-foreground">Learn more</p>
+                    <p className="font-semibold text-orange-400">认识我的老板</p>
+                    <p className="text-sm text-muted-foreground">了解更多关于我们的故事</p>
                   </div>
                   <ExternalLink className="w-5 h-5 text-orange-400" />
                 </CardContent>

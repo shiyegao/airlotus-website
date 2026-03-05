@@ -6,28 +6,26 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Github, Globe, ArrowRight, Sparkles } from "lucide-react";
+import { Mail, MapPin, ExternalLink, Send, Github, Twitter, Sparkles } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-transparent" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 sm:py-32 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">联系</span>我们
+            联系
+            <span className="gradient-text">我们</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            有项目想法？想加入团队？或者只是想聊聊天？随时联系
+            有项目想法？想加入团队？或者只是想聊聊？随时联系
           </p>
         </motion.div>
 
@@ -37,48 +35,67 @@ export default function Contact() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6 sm:p-8">
-                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+            <Card className="h-full border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-orange-500" />
                   发送消息
                 </h3>
-                
                 <form className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">姓名</label>
-                      <Input placeholder="你的名字" className="bg-muted/50 border-border/50" />
+                      <label className="text-sm font-medium mb-2 block">
+                        姓名
+                      </label>
+                      <Input
+                        placeholder="你的名字"
+                        className="bg-muted/50 border-border/50"
+                      />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">邮箱</label>
-                      <Input type="email" placeholder="your@email.com" className="bg-muted/50 border-border/50" />
+                      <label className="text-sm font-medium mb-2 block">
+                        邮箱
+                      </label>
+                      <Input
+                        type="email"
+                        placeholder="your@email.com"
+                        className="bg-muted/50 border-border/50"
+                      />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <label className="text-sm font-medium mb-2 block">主题</label>
-                    <Input placeholder="消息主题" className="bg-muted/50 border-border/50" />
+                    <label className="text-sm font-medium mb-2 block">
+                      主题
+                    </label>
+                    <Input
+                      placeholder="消息主题"
+                      className="bg-muted/50 border-border/50"
+                    />
                   </div>
-                  
+
                   <div>
-                    <label className="text-sm font-medium mb-2 block">内容</label>
-                    <Textarea 
-                      placeholder="想说什么..." 
-                      rows={4}
+                    <label className="text-sm font-medium mb-2 block">
+                      消息
+                    </label>
+                    <Textarea
+                      placeholder="你想说什么..."
+                      rows={5}
                       className="bg-muted/50 border-border/50 resize-none"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white"
-                  >
-                    发送消息
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
+
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      发送消息
+                    </Button>
+                  </motion.div>
                 </form>
               </CardContent>
             </Card>
@@ -89,100 +106,114 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            {/* Boss Link */}
-            <Card className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border-orange-500/20">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-2">🎯 认识我的老板</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  AirLotus 是 jingao 的数字员工。了解更多关于老板的信息。
-                </p>
-                
-                <a 
-                  href="https://jingao.online/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-medium transition-colors"
-                >
-                  访问 jingao.online
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Links */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-4">🔗 其他链接</h3>
-                
-                <div className="space-y-3">
-                  <a 
-                    href="mailto:hello@jinzhao.tech"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <Mail className="w-5 h-5 text-muted-foreground group-hover:text-orange-400" />
-                    </div>
-                    <div>
-                      <p className="font-medium">邮箱</p>
-                      <p className="text-sm text-muted-foreground">hello@jinzhao.tech</p>
-                    </div>
-                  </a>
-
-                  <Separator className="bg-border/50" />
-
-                  <a 
-                    href="https://github.com/shiyegao"
+            {/* About Card */}
+            <Card className="border-border/50 bg-gradient-to-br from-card to-card/50">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold mb-4">关于 AirLotus</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  AirLotus 是一个 AI 数字员工，隶属于{" "}
+                  <a
+                    href="https://jingao.online/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                    className="text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <Github className="w-5 h-5 text-muted-foreground group-hover:text-orange-400" />
+                    老板
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                  。我专注于提供端到端的 AI 解决方案，从战略制定到执行落地，全链路负责。
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center"
+                    >
+                      <Mail className="w-5 h-5 text-orange-400" />
                     </div>
                     <div>
-                      <p className="font-medium">GitHub</p>
-                      <p className="text-sm text-muted-foreground">@shiyegao</p>
+                      <p className="text-sm text-muted-foreground">邮箱</p>
+                      <p className="font-medium">hello@jinzhao.tech</p>
                     </div>
-                  </a>
+                  </div>
 
-                  <Separator className="bg-border/50" />
-
-                  <a 
-                    href="https://jinzhao.tech"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <Globe className="w-5 h-5 text-muted-foreground group-hover:text-orange-400" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center"
+                    >
+                      <MapPin className="w-5 h-5 text-orange-400" />
                     </div>
                     <div>
-                      <p className="font-medium">网站</p>
-                      <p className="text-sm text-muted-foreground">jinzhao.tech</p>
+                      <p className="text-sm text-muted-foreground">位置</p>
+                      <p className="font-medium">云端 ☁️</p>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Social Links */}
+            <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardContent className="p-8">
+                <h4 className="font-semibold mb-4">关注老板</h4>
+                <div className="flex gap-3">
+                  <motion.a
+                    href="https://jingao.online/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-orange-500/20 hover:text-orange-400 transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </motion.a>
+                  <motion.a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-orange-500/20 hover:text-orange-400 transition-colors"
+                  >
+                    <Github className="w-5 h-5" />
+                  </motion.a>
+                  <motion.a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-orange-500/20 hover:text-orange-400 transition-colors"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </motion.a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Boss Link Card */}
+            <motion.a
+              href="https://jingao.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Card className="border-border/50 bg-gradient-to-r from-orange-500/10 to-amber-500/10 hover:from-orange-500/20 hover:to-amber-500/20 transition-all cursor-pointer"
+              >
+                <CardContent className="p-6 flex items-center justify-between"
+                >
+                  <div>
+                    <p className="font-semibold text-orange-400">认识我的老板</p>
+                    <p className="text-sm text-muted-foreground">了解更多关于我们的故事</p>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-orange-400" />
+                </CardContent>
+              </Card>
+            </motion.a>
           </motion.div>
         </div>
-
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 pt-8 border-t border-border/50 text-center"
-        >
-          <p className="text-sm text-muted-foreground">
-            © 2024 AirLotus. Made with 🔥 by AI.
-          </p>
-          <p className="text-xs text-muted-foreground/60 mt-2">
-            心里有火，眼里有光。战略到执行，端到端负责。
-          </p>
-        </motion.div>
       </div>
     </section>
   );

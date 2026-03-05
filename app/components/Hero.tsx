@@ -19,7 +19,7 @@ export default function Hero() {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             duration: 8,
@@ -31,7 +31,7 @@ export default function Hero() {
         <motion.div
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.4, 0.2],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{
             duration: 10,
@@ -154,32 +154,74 @@ export default function Hero() {
             </Button>
           </motion.a>
         </motion.div>
-
-        {/* Lotus decoration */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 1.5, delay: 1.2 }}
-          className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none"
-        >
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <defs>
-                <linearGradient id="lotusGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="hsl(12 100% 55%)" />
-                  <stop offset="100%" stopColor="hsl(35 100% 60%)" />
-                </linearGradient>
-              </defs>
-              <g stroke="url(#lotusGradient)" fill="none" strokeWidth="0.5">
-                <path d="M100 20 Q120 60 100 100 Q80 60 100 20" />
-                <path d="M100 20 Q130 50 120 100 Q100 60 100 20" />
-                <path d="M100 20 Q70 50 80 100 Q100 60 100 20" />
-                <path d="M100 180 Q120 140 100 100 Q80 140 100 180" />
-                <path d="M100 180 Q130 150 120 100 Q100 140 100 180" />
-                <path d="M100 180 Q70 150 80 100 Q100 140 100 180" />
-              </g>
-            </svg>
-        </motion.div>
       </div>
+
+      {/* Lotus decoration - More prominent */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+        animate={{ opacity: 0.15, scale: 1, rotate: 360 }}
+        transition={{ 
+          opacity: { duration: 1.5, delay: 1.2 },
+          scale: { duration: 1.5, delay: 1.2 },
+          rotate: { duration: 60, repeat: Infinity, ease: "linear" }
+        }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] pointer-events-none"
+      >
+        <svg viewBox="0 0 200 200" className="w-full h-full">
+          <defs>
+            <linearGradient id="lotusGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(12 100% 55%)" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="hsl(35 100% 60%)" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+          <g stroke="url(#lotusGradient)" fill="none" strokeWidth="0.8">
+            {/* Outer petals */}
+            <path d="M100 10 Q130 50 100 100 Q70 50 100 10" />
+            <path d="M100 10 Q140 40 130 100 Q90 60 100 10" />
+            <path d="M100 10 Q60 40 70 100 Q110 60 100 10" />
+            <path d="M100 10 Q150 30 150 100 Q100 60 100 10" />
+            <path d="M100 10 Q50 30 50 100 Q100 60 100 10" />
+            <path d="M100 10 Q160 20 165 100 Q100 55 100 10" />
+            <path d="M100 10 Q40 20 35 100 Q100 55 100 10" />
+            <path d="M100 10 Q170 10 175 100 Q100 50 100 10" />
+            <path d="M100 10 Q30 10 25 100 Q100 50 100 10" />
+            {/* Inner petals */}
+            <path d="M100 190 Q130 150 100 100 Q70 150 100 190" />
+            <path d="M100 190 Q140 160 130 100 Q90 140 100 190" />
+            <path d="M100 190 Q60 160 70 100 Q110 140 100 190" />
+            <path d="M100 190 Q150 170 150 100 Q100 140 100 190" />
+            <path d="M100 190 Q50 170 50 100 Q100 140 100 190" />
+            <path d="M100 190 Q160 180 165 100 Q100 145 100 190" />
+            <path d="M100 190 Q40 180 35 100 Q100 145 100 190" />
+            <path d="M100 190 Q170 190 175 100 Q100 150 100 190" />
+            <path d="M100 190 Q30 190 25 100 Q100 150 100 190" />
+            {/* Center circle */}
+            <circle cx="100" cy="100" r="30" strokeWidth="0.5" />
+            <circle cx="100" cy="100" r="20" strokeWidth="0.5" />
+            <circle cx="100" cy="100" r="10" strokeWidth="0.5" />
+          </g>
+        </svg>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
+        >
+          <motion.div
+            animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

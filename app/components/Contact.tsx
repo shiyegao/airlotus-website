@@ -136,12 +136,12 @@ export default function Contact() {
                     <div>
                       <p className="text-sm text-muted-foreground">网站</p>
                       <a 
-                        href="https://jingao.online/" 
+                        href="https://jinzhao.tech/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="font-medium hover:text-orange-400 transition-colors"
                       >
-                        jingao.online →
+                        jinzhao.tech →
                       </a>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                     <ExternalLink className="w-5 h-5" />
                   </motion.a>
                   <motion.a
-                    href="https://github.com"
+                    href="https://github.com/shiyegao"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
@@ -186,7 +186,7 @@ export default function Contact() {
                     <Github className="w-5 h-5" />
                   </motion.a>
                   <motion.a
-                    href="https://twitter.com"
+                    href="https://x.com/JinGao2001"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}

@@ -141,7 +141,7 @@ export default function ScalingLotusPage() {
                   Lab: <span className="text-white/70">Jinzhao Tech</span>
                   <br />
                   <a href="https://jingao.online/" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 transition-colors">
-                    jingao.online →
+                    老板 →
                   </a>
                 </p>
               </div>

@@ -18,6 +18,17 @@ const teamMembers = [
     isMain: true,
   },
   {
+    id: "scalinglotus",
+    name: "ScalingLotus",
+    emoji: "🚀",
+    title: "S 级 AI 数字员工",
+    description: "闭环思维，科研工程双绝。找方向、带队伍、卷出一片天。",
+    skills: ["闭环研究", "闭环开发", "闭环交付", "团队搭建"],
+    icon: Bot,
+    color: "from-indigo-500 to-purple-500",
+    isMain: true,
+  },
+  {
     id: "codewright",
     name: "CodeWright",
     emoji: "⚡",
@@ -108,50 +119,53 @@ export default function Team() {
           </p>
         </motion.div>
 
-        {/* Main Member - AirLotus */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12"
-        >
-          <Card className="overflow-hidden border-border/50 bg-gradient-to-br from-card to-card/50 hover:border-orange-500/30 transition-all duration-500">
-            <CardContent className="p-8 sm:p-12">
-              <div className="flex flex-col lg:flex-row items-center gap-8">
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className={`w-32 h-32 rounded-2xl bg-gradient-to-br ${teamMembers[0].color} flex items-center justify-center text-6xl shadow-2xl shadow-orange-500/20`}
-                >
-                  {teamMembers[0].emoji}
-                </motion.div>
-                <div className="flex-1 text-center lg:text-left">
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-4">
-                    <h3 className="text-2xl sm:text-3xl font-bold">{teamMembers[0].name}</h3>
-                    <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0">
-                      {teamMembers[0].title}
-                    </Badge>
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    {teamMembers[0].description}
-                  </p>
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-                    {teamMembers[0].skills.map((skill) => (
-                      <Badge
-                        key={skill}
-                        variant="secondary"
-                        className="bg-muted/50 hover:bg-muted transition-colors"
-                      >
-                        {skill}
+        {/* Main Members - AirLotus & ScalingLotus */}
+        {teamMembers.filter(m => m.isMain).map((member, index) => (
+          <motion.div
+            key={member.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            className="mb-8"
+          >
+            <Card className="overflow-hidden border-border/50 bg-gradient-to-br from-card to-card/50 hover:border-orange-500/30 transition-all duration-500">
+              <CardContent className="p-8 sm:p-12">
+                <div className="flex flex-col lg:flex-row items-center gap-8">
+                  <motion.div
+                    whileHover={{ scale: 1.05, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className={`w-32 h-32 rounded-2xl bg-gradient-to-br ${member.color} flex items-center justify-center text-6xl shadow-2xl shadow-orange-500/20`}
+                  >
+                    {member.emoji}
+                  </motion.div>
+                  <div className="flex-1 text-center lg:text-left">
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-4">
+                      <h3 className="text-2xl sm:text-3xl font-bold">{member.name}</h3>
+                      <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0">
+                        {member.title}
                       </Badge>
-                    ))}
+                    </div>
+                    <p className="text-lg text-muted-foreground mb-6">
+                      {member.description}
+                    </p>
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                      {member.skills.map((skill) => (
+                        <Badge
+                          key={skill}
+                          variant="secondary"
+                          className="bg-muted/50 hover:bg-muted transition-colors"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
 
         {/* Future Team Members */}
         <motion.div
@@ -161,7 +175,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {teamMembers.slice(1).map((member) => (
+          {teamMembers.filter(m => !m.isMain).map((member) => (
             <motion.div key={member.id} variants={itemVariants}>
               <Card className="h-full border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card transition-all duration-300 group hover:scale-[1.02]">
                 <CardContent className="p-6">

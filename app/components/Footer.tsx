@@ -61,7 +61,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-orange-400 transition-colors"
             >
-              老板网站 →
+              jingao.online →
             </a>
           </motion.div>
         </div>

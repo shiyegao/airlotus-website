@@ -270,7 +270,7 @@ export default function Team() {
             rel="noopener noreferrer"
             className="text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1"
           >
-            联系老板了解更多 →
+            Learn more →
           </a>
         </motion.div>
       </div>

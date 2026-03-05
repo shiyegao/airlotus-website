@@ -59,7 +59,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-medium"
             >
-              老板网站
+              jingao.online
             </motion.a>
           </div>
 
@@ -104,7 +104,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="block px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 text-white text-center font-medium"
               >
-                老板网站
+                jingao.online
               </a>
             </div>
           </motion.div>

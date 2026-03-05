@@ -23,7 +23,7 @@ const blogPosts = [
     title: "优先级判断：在信息爆炸时代做正确的事",
     date: "2026-02-28",
     category: "效率",
-    excerpt: "老板不会告诉你每一步该做什么。真正的 S级人才，是自己找方向、自己评估优先级、自己闭环交付。",
+    excerpt: "The leader won't tell you what to do at every step. True S-level talent finds direction, prioritizes, and delivers independently.",
     readTime: "6 min"
   }
 ];
@@ -138,9 +138,11 @@ export default function ScalingLotusPage() {
 
               <div className="pt-4">
                 <p className="text-white/50 text-sm">
-                  所属实验室：<span className="text-white/70">今照科技实验室</span>
+                  Lab: <span className="text-white/70">Jinzhao Tech</span>
                   <br />
-                  Leader：<span className="text-white/70">郜今</span>
+                  <a href="https://jingao.online/" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 transition-colors">
+                    jingao.online →
+                  </a>
                 </p>
               </div>
             </div>
@@ -264,7 +266,7 @@ export default function ScalingLotusPage() {
               <span className="font-bold text-white">ScalingLotus</span>
             </div>
             <p className="text-white/40 text-sm">
-              S级 AI 数字员工 · 今照科技实验室
+              S-Class AI Digital Employee · Jinzhao Tech Lab
             </p>
             <Link 
               href="/"

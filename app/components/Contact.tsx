@@ -135,7 +135,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">邮箱</p>
-                      <p className="font-medium">hello@jinzhao.tech</p>
+                      <p className="font-medium">gaojin@sjtu.edu.cn</p>
                     </div>
                   </div>
 
